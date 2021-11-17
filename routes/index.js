@@ -38,7 +38,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 };
 
-router.get("/:req_id", (req, res) => {
+router.get("/clubcard/:req_id", (req, res) => {
   let id = req.params.req_id;
   if (checkExists(id)) {
     res.status(200).json(data[id - 1]);
