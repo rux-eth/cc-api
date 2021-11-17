@@ -23,8 +23,6 @@ const checkSupply = () => {
     });
 };
 
-const interval = setInterval(checkSupply, 1000);
-
 router.get("/clubcard/:req_id", (req, res) => {
   let id = req.params.req_id;
   res.status(200).send("" + id);
