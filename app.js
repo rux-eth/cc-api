@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const abi = require("./resources/ClubCardsABI");
+const data = require("./resources/metadata");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
