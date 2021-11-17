@@ -55,7 +55,7 @@ router.get("/clubcard/:req_id", (req, res) => {
 });
 /* GET home page. */
 router.get("/", (req, res, next) => {
-  res.render("index", { title: "Express" });
+  res.send("uuuuhhhh... well this is awkward");
 });
 
 module.exports = router;
