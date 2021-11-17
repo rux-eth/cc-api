@@ -3,8 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const data = require("./resources/metadata.json");
-const abi = require("./resources/ClubCardsABI.json");
+
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
@@ -13,8 +12,6 @@ const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
-app.set("data", data);
-app.set("abi", abi);
 
 app.use(logger("dev"));
 app.use(express.json());
