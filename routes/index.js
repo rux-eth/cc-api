@@ -10,7 +10,6 @@ const contract = new web3.eth.Contract(
   abi,
   "0x8780BFfc3AaC7eBc40194BCD70D20b7D4E6a92b6"
 );
-var currentSupply = 0;
 
 const checkSupply = () => {
   contract.methods
@@ -20,8 +19,6 @@ const checkSupply = () => {
       currentSupply = parseInt(res);
     });
 };
-
-const interval = setInterval(checkSupply, 1000);
 
 const checkExists = (token) => {
   if (token > currentSupply) {
