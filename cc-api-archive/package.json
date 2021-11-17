@@ -1,0 +1,19 @@
+{
+  "name": "cc-api",
+  "version": "1.0.0",
+  "description": "api to handle club card queries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "web3": "^1.6.1"
+  },
+  "engines": {
+    "node": "16.13.0"
+  }
+}
