@@ -23,7 +23,7 @@ app.use("/clubcard/:req_id", indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404));
+  res.sendStatus(400);
 });
 
 // error handler
