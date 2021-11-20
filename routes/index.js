@@ -22,7 +22,7 @@ const checkSupply = () => {
     });
 };
 
-const interval = setInterval(checkSupply, 10000);
+const interval = setInterval(checkSupply, 1000);
 
 const checkExists = (token) => {
   if (token > currentSupply) {
@@ -40,7 +40,7 @@ const getRandomInt = (min, max) => {
 
 router.get("/clubcard/:req_id", (req, res) => {
   let id = req.params.req_id;
-  if (id > 520) {
+  if (id < 1 || id > 520 || isNaN(id)) {
     res.sendStatus(400);
   }
   if (checkExists(id)) {
