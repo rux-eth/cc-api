@@ -40,6 +40,9 @@ const getRandomInt = (min, max) => {
 
 router.get("/clubcard/:req_id", (req, res) => {
   let id = req.params.req_id;
+  if (id > 520) {
+    res.sendStatus(400);
+  }
   if (checkExists(id)) {
     res.status(200).json(data[id - 1]);
   } else {
