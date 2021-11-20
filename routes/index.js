@@ -53,8 +53,8 @@ router.get("/clubcard/:req_id", (req, res) => {
     });
   }
 });
-/* GET home page. */
-router.get("/", (req, res, next) => {
+
+router.get("/", (req, res) => {
   res.send("uuuuhhhh... well this is awkward");
 });
 
