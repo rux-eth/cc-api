@@ -3,14 +3,12 @@ const router = express.Router();
 const data = require("../resources/metadata.json");
 const abi = require("../resources/ClubCardsABI.json");
 const Web3 = require("web3");
-const web3 = new Web3(
-  "https://mainnet.infura.io/v3/df78fbf24831482086628af2e81e4b58"
-);
+const web3 = new Web3(process.env.INFURA_MAINNET);
+
 const contract = new web3.eth.Contract(
   abi,
   "0x8780BFfc3AaC7eBc40194BCD70D20b7D4E6a92b6"
 );
-let port = process.env.PORT || 3000;
 var currentSupply = 0;
 
 const checkSupply = () => {
@@ -23,7 +21,6 @@ const checkSupply = () => {
 };
 
 const interval = setInterval(checkSupply, 10000);
-
 const checkExists = (token) => {
   if (token > currentSupply) {
     return false;
