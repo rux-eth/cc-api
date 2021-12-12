@@ -1,26 +1,33 @@
+require("dotenv").config();
+
 const express = require("express");
 const router = express.Router();
 const data = require("../resources/metadata.json");
 const abi = require("../resources/ClubCardsABI.json");
-const Web3 = require("web3");
-const web3 = new Web3(process.env.INFURA_MAINNET);
-
-const contract = new web3.eth.Contract(
-  abi,
-  "0x8780BFfc3AaC7eBc40194BCD70D20b7D4E6a92b6"
+const ethers = require("ethers");
+const web3 = new ethers.providers.InfuraProvider(
+  "mainnet",
+  process.env.INFURA_MAINNET_ID
 );
+
+const contract = new ethers.Contract(
+  "0x8780BFfc3AaC7eBc40194BCD70D20b7D4E6a92b6",
+  abi,
+  web3
+);
+
 var currentSupply = 0;
 
 const checkSupply = () => {
-  contract.methods
+  contract
     .totalSupply()
-    .call()
     .then((res) => {
-      currentSupply = parseInt(res);
-    });
+      currentSupply = res.toNumber();
+    })
+    .catch((err) => {});
 };
 
-const interval = setInterval(checkSupply, 10000);
+const interval = setInterval(checkSupply, 1000);
 const checkExists = (token) => {
   if (token > currentSupply) {
     return false;

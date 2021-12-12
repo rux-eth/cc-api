@@ -9,10 +9,13 @@
     "aws-sdk": "^2.1030.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.5.1",
     "express": "~4.16.1",
+    "express-oas-generator": "^1.0.41",
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
     "morgan": "~1.9.1",
-    "web3": "^1.6.1"
+    "web3": "^0.20.7"
   }
 }
