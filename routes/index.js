@@ -26,8 +26,7 @@ const checkSupply = () => {
     })
     .catch((err) => {});
 };
-
-const interval = setInterval(checkSupply, 1000);
+const interval = setInterval(checkSupply, 10000);
 const checkExists = (token) => {
   if (token > currentSupply) {
     return false;
