@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const helmet = require("helmet");
 const router = express.Router();
 const data = require("../resources/metadata.json");
 const abi = require("../resources/ClubCardsABI.json");
